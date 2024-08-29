@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+
+    <key>predavaci</key>
+
+    <view>pages/predavaci</view>
+    <controller>Sulu\Bundle\WebsiteBundle\Controller\DefaultController::indexAction</controller>
+    <cacheLifetime>604800</cacheLifetime>
+
+    <meta>
+        <title lang="en">Predavači 2023</title>
+    </meta>
+
+    <properties>
+        <property name="title" type="text_line" mandatory="true">
+            <meta>
+                <title lang="en">Title</title>
+            </meta>
+            <params>
+                <param name="headline" value="true"/>
+            </params>
+
+            <tag name="sulu.rlp.part"/>
+        </property>
+
+        <property name="url" type="resource_locator" mandatory="true">
+            <meta>
+                <title lang="en">Resourcelocator</title>
+                <title lang="de">Adresse</title>
+            </meta>
+
+            <tag name="sulu.rlp"/>
+        </property>
+
+
+        <property name="company_name" type="text_line" >
+            <meta>
+                <title lang="en">Company Name</title>
+            </meta>
+        </property>
+
+
+        <property name="company_title" type="text_line" >
+            <meta>
+                <title lang="en">Company Title</title>
+            </meta>
+        </property>
+
+        <property name="company_image" type="single_media_selection">
+            <meta>
+                <title lang="en">Company Logo Image</title>
+            </meta>
+        </property>
+
+        <property name="speaker_image" type="single_media_selection">
+            <meta>
+                <title lang="en">Speaker Image</title>
+            </meta>
+        </property>
+
+        <property name="speaker_biography" type="text_area" >
+            <meta>
+                <title lang="en">Speaker Biography</title>
+            </meta>
+        </property>
+
+        <property name="link" type="link">
+            <meta>
+                <title lang="en">Link</title>
+                <title lang="de">Link</title>
+            </meta>
+        
+            <params>
+                <param name="enable_anchor" value="true"/>
+                <param name="enable_attributes" value="true"/>
+                <param name="types" type="collection">
+                    <param name="page"/>
+                    <param name="external"/>
+                    <param name="media"/>
+                </param>
+            </params>
+        </property>
+
+
+
+    </properties>
+</template>

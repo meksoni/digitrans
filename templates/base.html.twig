@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|split('_')[0] }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block meta %}
+        {% include "@SuluWebsite/Extension/seo.html.twig" with {
+            "seo": extension.seo|default([]),
+            "content": content|default([]),
+            "localizations": localizations|default([]),
+            "shadowBaseLocale": shadowBaseLocale|default(),
+        } %}
+    {% endblock %}
+
+    {% block style %}
+    {{ encore_entry_link_tags('app') }}
+    <link rel="stylesheet" href="{{asset('assets/css/splitting-text.min.css')}}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/logo/presentation.png') }}">
+    {% endblock %}
+</head>
+<body class="bg-dark text-white">
+    
+    {% block header %}
+    <header class="z-index-fixed header-transparent header-fixed-top sticky-fixed">
+          {% include 'inc/nav.html.twig' %}  
+    </header>
+    {% endblock %}
+
+    {% block content %}
+    <main class="bg-dark text-white">
+    </main>
+    {% endblock %}
+
+    <footer>
+        {% block footer %}
+            
+        {% endblock %}
+    </footer>
+
+    <a href="#" class="toTop">
+      <i class="bx bxs-up-arrow text-danger"></i>
+    </a>
+
+    {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+            
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<formats xmlns="http://schemas.sulu.io/media/formats"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://schemas.sulu.io/media/formats http://schemas.sulu.io/media/formats-1.1.xsd">
+
+    <!-- See: http://docs.sulu.io/en/latest/book/image-formats.html how to define image-formats -->
+
+    <!--
+    <format key="300x">
+        <meta>
+            <title lang="en">Example Image</title>
+            <title lang="de">Beispielbild</title>
+        </meta>
+
+        <scale x="300"/>
+    </format>
+    -->
+
+    <!--
+    Render an image from the media_selection in a specific format the following way:
+
+    <img src="{{ image.thumbnails['300x'] }}" alt="{{ image.title }}" title="{{ image.description|default(image.title) }}">
+    -->
+
+     <format key="900x1000">
+        <meta>
+            <title lang="en">Avatar Speaker Image</title>
+        </meta>
+
+        <scale x="900" y="1000"/>
+    </format>
+
+    <format key="960x900">
+        <meta>
+            <title lang="en">Speaker Image</title>
+        </meta>
+
+        <scale x="960" y="900"/>
+    </format>
+
+    <format key="900x900">
+        <meta>
+            <title lang="en">Speaker Image</title>
+        </meta>
+
+        <scale x="900" y="900"/>
+    </format>
+
+     <format key="200x">
+        <meta>
+            <title lang="en">Company Logo Image</title>
+        </meta>
+
+        <scale x="200"/>
+    </format>
+
+    <format key="150x">
+        <meta>
+            <title lang="en">Company Logo Image</title>
+        </meta>
+
+        <scale x="150"/>
+    </format>
+</formats>

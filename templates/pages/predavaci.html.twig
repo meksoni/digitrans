@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+
+{% block header %}
+<header class="z-index-fixed header-transparent header-fixed-top sticky-fixed ">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
+        <!--Navbar-fixed-background-->
+        <div class="navbar-fixed-bg position-absolute"></div>
+        <div class="container position-relative">
+            <a class="navbar-brand" href="{{ sulu_content_root_path() }}">
+                <img src="{{asset('assets/img/logo/black-logo.png')}}" alt="" class="img-fluid navbar-brand-sticky">
+                <img src="{{asset('assets/img/logo/logo1.png')}}" alt="" class="img-fluid navbar-brand-transparent">
+            </a>
+            <div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+                <button class="navbar-toggler order-last" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i></i>
+                    </span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="mainNavbarTheme">
+                <ul class="navbar-nav ms-auto me-lg-5">
+                    <li class="nav-item d-none">
+                        <a href="{{ sulu_content_root_path() }}" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="{{ sulu_content_root_path() }}#konferencija" class="nav-link">O Konferenciji</a>
+                    </li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="{{ sulu_content_root_path() }}#agenda" class="nav-link">Agenda</a>
+                    </li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="{{ sulu_content_root_path() }}#predavaci" class="nav-link">Predavači</a>
+                    </li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="{{ sulu_content_root_path() }}#prijava" class="nav-link">Prijava</a>
+                    </li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="{{ sulu_content_root_path() }}#sponzorstva" class="nav-link">Pokrovitelji i Partneri</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="mb-lg-10"></div>
+
+ <section class="position-relative">
+    <div class="container overflow-hidden position-relative py-15">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 col-sm-8 mx-auto mx-md-0 col-xl-5 mb-5 mb-md-0">
+                <div class="position-relative  z-index-1" data-aos="fade-left">
+                    <!--Parallax-element-->
+                    <div class="position-absolute start-0 top-50 translate-middle-y width-7x h-auto">
+                        <div class="rellax" data-rellax-speed="-2" data-rellax-percentage=".9">
+                            <img src="{{asset('assets/img/vectors/pattern-dots.svg')}}" alt=""
+                                class="fill-warning w-100 h-auto" data-inject-svg></div>
+                    </div>
+                    <div class="width-18x mx-auto  position-relative">
+                        {% set speakerImage = content.speaker_image %}
+                        {% if speakerImage is not null %}
+                        <img src="{{ speakerImage.thumbnails['900x900.webp'] }}" alt=""
+                            class="img-fluid shadow rounded-2">
+                        {% else %}
+                        <img src="{{ asset('assets/img/team/profile.png') }}" alt=""
+                            class="img-fluid shadow   rounded-2">
+                        {% endif %}
+                    </div>
+                    </div>
+            </div>
+            <div class="col-md-6 col-lg-5 text-center text-lg-start position-relative z-index-1" data-aos="fade-right">
+                <div class="width-16x mb-5">
+                {% set companyLogo = content.company_image %}
+                {% if companyLogo is not null %}
+                    <img src="{{ companyLogo.thumbnails['200x.webp'] }}" alt="" class="img-fluid opacity-75">
+                {% else %}
+                </div>
+                    <h5 class="mb-3">{{ content.company_name }}</h5>
+                {% endif %}
+                <div class="mb-5">
+                    <h2 class="mb-1">{{ content.title }}</h2>
+                    <small class="d-block text-muted">{{ content.company_title }}</small>
+                </div>
+
+                <div class="mb-5 font-serif fst-italic">
+                    {{ content.speaker_biography }}
+                </div>
+
+                
+                <a href="{{ content.link }}" class="link-hover-no-underline  text-white fw-semibold fs-6" 
+                target="_blank">
+                    {% if view.link.title is defined %}
+                    {{ view.link.title }}
+                    {% else %}
+                    Posetite sajt kompanije
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

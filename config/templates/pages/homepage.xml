@@ -1,0 +1,259 @@
+<?xml version="1.0" ?>
+<template xmlns="http://schemas.sulu.io/template/template"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+
+    <key>homepage</key>
+
+    <view>pages/homepage</view>
+    <controller>Sulu\Bundle\WebsiteBundle\Controller\DefaultController::indexAction</controller>
+    <cacheLifetime>86400</cacheLifetime>
+
+    <meta>
+        <title lang="en">Homepage</title>
+        <title lang="de">Startseite</title>
+    </meta>
+
+    <properties>
+        <property name="title" type="text_line" mandatory="true">
+            <meta>
+                <title lang="en">Title</title>
+                <title lang="de">Titel</title>
+            </meta>
+            <params>
+                <param name="headline" value="true"/>
+            </params>
+
+            <tag name="sulu.rlp.part"/>
+        </property>
+
+        <property name="url" type="resource_locator" mandatory="true">
+            <meta>
+                <title lang="en">Resourcelocator</title>
+                <title lang="de">Adresse</title>
+            </meta>
+
+            <tag name="sulu.rlp"/>
+        </property>
+
+        <property name="single_ticket" type="single_form_selection" colspan="6">
+            <meta>
+                <title lang="en">Single Ticket Form | Select</title>
+            </meta>
+
+            <params>
+                <param name="resourceKey" value="page"/>
+            </params>
+        </property>
+
+        <property name="sponsorship_packages" type="single_form_selection" colspan="6">
+            <meta>
+                <title lang="en">Sponsorship Package Form | Select</title>
+            </meta>
+
+            <params>
+                <param name="resourceKey" value="page"/>
+            </params>
+        </property>
+
+
+
+
+    <section name="homeContent">
+        <meta>
+            <title lang="en">O Konferenciji</title>
+        </meta>
+        <properties>
+            <block name="accordion_block">
+                <meta>
+                    <title lang="en">More Event Details | Accordion</title>
+                </meta>
+
+                <params>
+                    <param name="add_button_text">
+                        <meta>
+                            <title lang="en">Add Question/Answer</title>
+                        </meta>
+                    </param>
+                </params>
+
+                <types>
+                    <type name="accordion">
+                        <meta>
+                            <title lang="en">Question/Answer</title>
+                        </meta>
+    
+                        <properties>
+                            <property name="accordion_headline" type="text_line" >
+                                <meta>
+                                    <title lang="en">Accordion Headline</title>
+                                </meta>
+                            </property>
+            
+                            <property name="accordion_description" type="text_editor" >
+                                <meta>
+                                    <title lang="en">Accordion Description</title>
+                                </meta>        
+                            </property>
+                        </properties>
+
+                    </type>
+                </types>
+            </block>
+
+            <block name="conference_theme_block">
+                <meta>
+                    <title lang="en">Conference Theme</title>
+                </meta>
+
+                <params>
+                    <param name="add_button_text">
+                        <meta>
+                            <title lang="en">Add Conference Theme</title>
+                        </meta>
+                    </param>
+                </params>
+
+                <types>
+                    <type name="swipper">
+                        <meta>
+                            <title lang="en">Conference Theme</title>
+                        </meta>
+    
+                        <properties>
+                            <property name="theme_headline" type="text_line" >
+                                <meta>
+                                    <title lang="en">Theme Headline</title>
+                                </meta>
+                            </property>
+            
+                            <property name="theme_description" type="text_editor" >
+                                <meta>
+                                    <title lang="en">Theme Description</title>
+                                </meta>        
+                            </property>
+                        </properties>
+
+                    </type>
+                </types>
+            </block>
+
+            <block name="agenda_block">
+                <meta>
+                    <title lang="en">Agenda Schedule Block</title>
+                </meta>
+
+                <params>
+                    <param name="add_button_text">
+                        <meta>
+                            <title lang="en">Add Agenda Schedule</title>
+                        </meta>
+                    </param>
+                </params>
+
+                <types>
+                    <type name="agenda_schedule">
+                        <meta>
+                            <title lang="en">Conference Theme</title>
+                        </meta>
+    
+                        <properties>
+                            <property name="agenda_start_time" type="time" colspan="6">
+                                <meta>
+                                    <title lang="en">Schedule Start Time</title>
+                                </meta>
+                            </property>
+
+                            <property name="agenda_end_time" type="time" colspan="6">
+                                <meta>
+                                    <title lang="en">Schedule End Time</title>
+                                </meta>
+                            </property>
+            
+                            <property name="agenda_headline" type="text_line" >
+                                <meta>
+                                    <title lang="en">Agenda Headline</title>
+                                </meta>   
+                            </property>
+
+                            <property name="agenda_description" type="text_editor" >
+                                <meta>
+                                    <title lang="en">Agenda Description</title>
+                                </meta>   
+                            </property>
+                        </properties>
+
+                    </type>
+                </types>
+            </block>
+
+           
+        </properties>
+    </section>
+
+    <section name="speaker">
+        <meta>
+            <title lang="en">Speakers Block</title>
+        </meta>
+        <properties>
+            <property name="speakers" type="smart_content">
+                <meta>
+                    <title lang="en">Add a Speakers</title>
+                </meta>
+            
+                <params>
+                    <param name="provider" value="pages"/>
+                    <param name="max_per_page" value="16"/>
+                    <param name="page_parameter" value="p"/>
+            
+                    <param name="properties" type="collection">
+                        <param name="excerptTitle" value="excerpt.title"/>
+                        <!-- <param name="excerptTags" value="excerpt.tags"/> -->
+                        <param name="excerptMore" value="excerpt.more"/>
+                        <!-- <param name="excerptCategories" value="excerpt.categories"/> -->
+                        <param name="excerptImages" value="excerpt.images"/>
+                        <param name="excerptDescription" value="excerpt.description"/>
+                    </param>
+
+                </params>
+            </property>
+        </properties>
+    </section>
+
+    <section name="partners">
+        <meta>
+            <title lang="en">Partners Block</title>
+        </meta>
+        <properties>
+            <property name="partners" type="smart_content">
+                <meta>
+                    <title lang="en">Add a Partner</title>
+                </meta>
+            
+                <params>
+                    <param name="provider" value="pages"/>
+                    <param name="max_per_page" value="16"/>
+                    <param name="page_parameter" value="p"/>
+            
+                    <param name="properties" type="collection">
+                        <param name="excerptTitle" value="excerpt.title"/>
+                        <!-- <param name="excerptTags" value="excerpt.tags"/> -->
+                        <param name="excerptMore" value="excerpt.more"/>
+                        <!-- <param name="excerptCategories" value="excerpt.categories"/> -->
+                        <param name="excerptImages" value="excerpt.images"/>
+                        <param name="excerptDescription" value="excerpt.description"/>
+                    </param>
+
+                </params>
+            </property>
+        </properties>
+    </section>
+
+
+    
+
+    </properties>
+
+
+    
+</template>

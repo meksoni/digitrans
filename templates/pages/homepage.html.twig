@@ -1,0 +1,651 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+<section class="position-relative text-white overflow-hidden jarallax" >
+    <!--Parallax image-->
+    <img src="{{asset('assets/img/background/background3.jpg')}}" class="jarallax-img opacity-100" alt="">
+    <div class="position-absolute w-100 h-100 bg-gradient-dark start-0 top-0"></div>
+    <div class="container position-relative z-index-1">
+        <div class="row vh-100 align-items-center">
+            <div class="col-lg-12 col-xl-12 text-center">
+                <h1 class="text-white my-4 display-2 text-uppercase " data-aos="fade-up" data-aos-duration="800">
+                    Business <span class="text-danger">&</span> Digital <br> Transformation Conference
+                </h1>
+                <p class="text-white" data-aos="fade-up" data-aos-duration="1000">
+                    EDUKATIVNI CENTAR NOVI SAD<br> INDUSTRIJSKA BB
+                </p>
+                <p class="text-white mb-5 mb-lg-7" data-aos="fade-up" data-aos-duration="1200">NOVEMBAR 02, 2023</p>
+
+                <div id="countdown" class="row">
+                  
+                  
+                    <div class="col-6 col-sm-4 col-lg-3 py-2 px-lg-5 d-flex flex-column align-items-center" data-aos="fade-right" data-aos-duration="1000">
+                      <span id="days" class=" lead text-white fs-5">Days</span>
+                      <span id="days-value" class="text-white display-5"></span>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-lg-3 py-2 px-lg-5 d-flex flex-column align-items-center" data-aos="fade-up" data-aos-duration="1000"> 
+                      <span id="hours" class="lead text-white fs-5">Hours</span>
+                      <span id="hours-value" class="text-white display-5"></span>
+                    </div>
+
+
+                    <div class="col-6 col-sm-4 col-lg-3 py-2 px-lg-5 d-flex flex-column align-items-center" data-aos="fade-up" data-aos-duration="1000">
+                        <span id="minutes" class="lead text-light fs-5">Minutes</span>
+                        <span id="minutes-value" class="text-white display-5"></span>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-lg-3 py-2 px-lg-5 d-flex flex-column align-items-center" data-aos="fade-left" data-aos-duration="1000">
+                        <span id="seconds" class="lead text-white fs-5">Seconds</span>
+                        <span id="seconds-value" class="text-white display-5"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="position-relative overflow-hidden jarallax" id="konferencija">
+    <img src="{{asset('assets/img/background/qwerty.png')}}" class="jarallax-img opacity-25 w-25 position-absolute top-50 translate-middle-y  start-0" alt="">
+    <div class="container py-9 py-lg-11 z-index-1 position-relative">
+        <div class="row mb-6 mb-lg-6 justify-content-between align-items-end">
+            <div class="col-lg-10 col-xl-8 mx-auto text-center">
+                <!--begin:Subheading-->
+                <div class="mb-3" data-aos="fade-up">
+                    <span class="h6 text-muted">DigiTrans Conference</span>
+                </div>
+                <!--end:subheading-->
+
+                <!--begin:Section Heading-->
+                <h2 class="display-5 mb-0 text-gradient" data-aos="fade-up">
+                    Saznajte više o našoj konferenciji
+                </h2>
+                <!--end:heading-->
+            </div>
+        </div>
+
+        <div class="row mb-9 mb-lg-11">
+            <div class="col-lg-8 col-12 mx-auto">
+
+                <div class="accordion accordion-custom" id="accordionBlock">
+                    <!--accordion item-->
+                {% for accordionItem in content.accordion_block %}
+                    {% set uniqueId = 'accordionItem_' ~ loop.index %}
+                    <div class="accordion-item mb-3" data-aos="fade-up">
+                         <!--accordion header-->
+                        <h2 class="accordion-header" id="{{ uniqueId }}">
+                            <button class="accordion-button {{ loop.first ? '' : 'collapsed'}}" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse{{ uniqueId }}" aria-expanded="{{ loop.first ? ' true' : 'false'}}"
+                                aria-controls="collapse{{ uniqueId }}">
+                                {{ accordionItem.accordion_headline }}
+                            </button>
+                        </h2>
+                         <!--accordion detail-->
+                        <div id="collapse{{ uniqueId }}" class="accordion-collapse collapse {{loop.first ? ' show' : '' }}"
+                            aria-labelledby="{{ uniqueId }}" data-bs-parent="#accordionBlock">
+                            <div class="accordion-body">
+                                {{accordionItem.accordion_description|raw}}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        <div>
+    </div>
+</section>
+
+<section id="agenda" class="position-relative">
+    <div class="container pt-0 pt-lg-0 py-9 z-index-1 position-relative overflow-hidden">
+        <!--Triangle shape-->
+        <div data-rellax-speed="2" data-rellax-percentage=".9"
+            class="position-absolute start-0 top-0 ms-3 mt-3 mt-lg-7 ms-lg-9 text-success rellax">
+            <svg class="" width="36" height="36" viewBox="0 0 104 104" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.64453 8.64453L92.2962 31.0589L31.0589 92.2962L8.64453 8.64453Z"
+                    stroke="currentColor" stroke-width="8"></path>
+            </svg>
+        </div>
+
+        <div data-rellax-speed="-2" data-rellax-percentage=".9"
+            class="position-absolute end-0 bottom-50 mb-3 me-3 me-lg-9 mb-lg-9 text-warning rellax">
+            <svg class="" width="36" height="36" viewBox="0 0 108 108" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="54" cy="54" r="50" stroke="currentColor" stroke-width="8"></circle>
+            </svg>
+            </svg>
+        </div>
+
+        <div class="row mb-5 mb-lg-15">
+            <div class="col-md-12 mx-auto">
+                <h2 class="mb-7 mb-lg-9 text-center display-4" data-aos="fade-up">Teme konferencije <span class="text-danger">&</span> Agenda</h2>
+                <div class="row">
+                    <div class="col-xl-7 col-md-10 col-lg-8 mx-auto position-relative">
+                        <div class="swiper pb-9 swiperFaqs position-relative bg-transparent">
+                            <div class="swiper-wrapper">
+                            {% for themeItem in content.conference_theme_block %}
+                                <div class="swiper-slide py-7 py-lg-9 px-4 px-lg-5 bg-white text-dark shadow-lg rounded-4 border border-secondary">
+                                    <h5 class="mb-3 fw-bold text-success">{{ themeItem.theme_headline }}</h5>
+                                    <hr>
+                                    <div class="mb-0">
+                                        {{ themeItem.theme_description|raw }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                            <div class="swiper-pagination text-info"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <h5 class="mb-4 text-success" data-aos="fade-up">Agenda</h5>
+                <h2 class="display-3 text-capitalize mb-6" data-aos="fade-up">Raspored & Agenda</h2>
+                <!--Schedule tabs-->
+                <div class="nav nav-pills  flex-column justify-content-center" id="myTab" role="tablist" data-aos="fade-up" >
+                    <button class="nav-link px-4 active text-start mb-3" id="d1-tab" data-bs-toggle="tab"
+                        data-bs-target="#day1" type="button" role="tab" aria-controls="day1"
+                        aria-selected="true">
+                        <span class="d-block fs-5 fw-bold">Voditelj: Lale Marković - Tag Media</span>
+                        <span class="small">Četvrtak, Novembar 2, 2023</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-7 col-xl-6 ms-xl-auto">
+                <div data-aos="fade-up" class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="day1" role="tabpanel"
+                        aria-labelledby="d1-tab">
+                        <ul class="pt-4 list-unstyled mb-0">
+                        {% for agendaItem in content.agenda_block %}
+                            <li class="d-flex flex-column flex-md-row py-4">
+                                <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">{{ agendaItem.agenda_start_time|date('H:i') }} - {{ agendaItem.agenda_end_time|date('H:i') }} </span>
+                                <div class="flex-grow-1 ps-4 border-start border-3">
+                                    <h5 class="text-muted">{{ agendaItem.agenda_headline }}</h5>
+                                    <div class="mb-0">
+                                        {{ agendaItem.agenda_description|raw }}
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="position-relative" id="predavaci">
+    <div class="container py-9 py-lg-11">
+        <div class="row mb-7 mb-lg-9">
+            <div class="col-lg-10 col-xl-8 mx-auto text-center" data-aos="fade-up" data-aos-duration="700">
+                <h2 class="display-5 text-gradient">DiGiTRANS PREDAVAČI NOVI SAD 2023</h2>
+            </div>
+        </div>
+        <div class="row">
+
+        {% for speaker in content.speakers %}
+            <div class="col-lg-3 mb-7 mt-auto text-center" data-aos="fade-up" data-aos-delay="100"
+                data-aos-duration="700">
+               
+                {% if speaker.excerptImages|length > 0 %}
+                <div class="position-relative mb-4 overflow-hidden width-15x height-15x mx-auto rounded-circle">
+                    <a href="{{ sulu_content_path(speaker.url) }}">
+                        <img src="{{ speaker.excerptImages[0].thumbnails['900x1000.webp'] }}" alt="" class="img-fluid">
+                    </a>
+                </div>
+                {% endif %}
+
+                <div>
+                    <h5 class="mb-1">
+                        {{ speaker.excerptTitle }}
+                    </h5>
+                    
+                    <small class="text-muted">{{ speaker.excerptMore }}</small>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    </div>
+</section>
+
+<section class="position-relative bg-white text-dark" id="prijava">
+    
+  <!--Container-->
+  <div class="container pt-12 pb-9 pb-lg-11 pt-lg-14 position-relative z-index-1">
+    <div class="row align-items-center justify-content-between">
+         <div class="col-md-7 mb-md-0 mb-7  text-center text-lg-start">
+            <!--Hero heading-->
+            <h1 class="display-2 text-danger mb-1">Kupite kartu na vreme</h1>
+            <!--Hero subheading-->
+            <p class="col-lg-10 lead mb-5">
+                 Prisustvujte našoj DigiTrans Konferenciji, rezervišite Vaše mesto na vreme, broj mesta je ograničen.
+            </p>
+            {% if app.request.get('send') == 'true' %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-message">
+                {{ view.single_ticket.entity.successText|raw }}
+                <button type="button" class="btn-close p-0 top-50 translate-middle-y me-2" data-bs-dismiss="alert" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"
+                        width="16" height="16" viewBox="0 0 128 128">
+                        <g>
+                            <path stroke="currentColor" stroke-width="8" stroke-linecap="square"
+                                fill="none" d="M7 7l114 114m0-114l-114 114" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-md-5 col-xl-4 ">
+            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                <div class="price-monthly fs-5">
+                    <label for="planSwitch">Član ste Unije Poslodavaca?</label>
+                </div>
+                <!-- Switch -->
+                <div class="form-check form-switch ms-3 me-2">
+                
+                <em class="small fs-5 font-serif fst-italic text-success"><br>uštedite preko 50%</em>
+                    <input class="form-check-input me-0" type="checkbox" id="planSwitch" data-as-toggle="price"
+                        data-as-target=".price" role="switch">
+                    <label class="form-check-label" for="planSwitch"></label>
+                </div>
+                <div class="price-monthly fs-5">
+                    <label for="planSwitch"></label>
+                </div>
+            </div>
+
+
+          <div class="p-4 p-lg-5 rounded-3 bg-white border text-dark shadow-lg z-index-1 position-relative">
+            <!--Pricing card background-->
+            <div class="position-absolute start-0 top-0 w-100 h-100 bg-white rounded-3"></div>
+         <div class="position-relative z-index-1">
+          <!--Plan type-->
+          <h5>Cena pojedinačne karte</h5>
+          <!--Plan price-->
+          <div class="d-flex mb-5">
+          <h1 class="display-2 mb-0 price text-secondary" data-as-monthly="3000" data-as-annual="7000">7000</h1>
+          <small class="fs-2 align-self-end text-secondary">rsd</small>
+          </div>
+          
+          <!--Plan features list-->
+          
+            <!--Plan action button-->
+            <div class="d-grid mb-3">
+            {% if app.request.get('send') == 'true' %}
+            <a href="#sponzorski-paketi" class="btn btn-sm btn-success">Postanite sponzor</a>
+            {% else %}
+            <a href="#rezervacija" data-bs-toggle="modal" aria-expanded="false" class="btn btn-sm btn-secondary">Rezervacija</a>
+            {% endif %}
+            </div>
+            <!--Plan info text-->
+            <p class="mb-0 small text-dark"><strong>Postanite sponzor</strong> ove konferencije. <br>
+            <a href="#sponzorski-paketi" class="link-decoration text-dark">Sponzorski paketi</a>
+           </p>
+       </div>
+
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="modal fade" id="rezervacija" tabindex="-1" aria-labelledby="modalBasicLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content border-0">
+                    <div class="modal-header border-0 bg-light">
+                        <h5 class="modal-title">Rezervacija karte | DigiTrans Konferencija</h5>
+                        <!--Close button-->
+                        <button type="button"
+                            class="btn btn-outline-secondary p-0 border-2 width-3x height-3x  rounded-circle z-index-1"
+                            data-bs-dismiss="modal" aria-label="Close">
+                            <i class="bx bx-x fs-3"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body  border-0">
+                        {% set singleTicketForm = content.single_ticket %}
+                        {% if singleTicketForm is defined %}
+                            {% if app.request.get('send') != 'true' %}
+                                {# FORM THEME #}
+                                {% form_theme singleTicketForm '@SuluForm/themes/basic.html.twig' %}
+                                {{ form_start(singleTicketForm) }}
+                        
+                                <div class="row d-flex">
+
+                                    <div class="col-lg-12 col-sm-12 mb-2 d-flex flex-column flex-sm-row align-items-center gap-3">
+                                        <label class="form-check-label text-dark" for="">Ako rezervišete kao firma, molimo Vas prevucite dugme da bi ste otključali polja za unos podataka firme.</label>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="isFirma">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-12 mb-2">
+                                         <input type="text" class="form-control form-control-sm mb-2" 
+                                         placeholder="{{ field_label(singleTicketForm.company)}}"
+                                         value="{{ field_value(singleTicketForm.company)}}"
+                                         name="{{ field_name(singleTicketForm.company)}}"
+                                         id="nazivFirme"
+                                         disabled=""
+                                         >
+                                    </div>
+                        
+                                    <div class="col-lg-6 col-sm-12 mb-2">
+                                         <input type="text" class="form-control form-control-sm mb-2" 
+                                         placeholder="{{ field_label(singleTicketForm.text)}}"
+                                         value="{{ field_value(singleTicketForm.text)}}"
+                                         name="{{ field_name(singleTicketForm.text)}}"
+                                         id="pibFirme"
+                                         disabled=""
+                                         >
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-12 mb-2">
+                                        <input type="text" class="form-control form-control-sm mb-2" 
+                                         placeholder="{{ field_label(singleTicketForm.text2)}}*"
+                                         value="{{ field_value(singleTicketForm.text2)}}"
+                                         name="{{ field_name(singleTicketForm.text2)}}"
+                                         >
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-12 mb-2">
+                                        <input type="email" class="form-control form-control-sm mb-2" 
+                                         placeholder="{{ field_label(singleTicketForm.email)}}*"
+                                         value="{{ field_value(singleTicketForm.email)}}"
+                                         name="{{ field_name(singleTicketForm.email)}}"
+                                         >
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-12 mb-2">
+                                        <input type="phone" class="form-control form-control-sm mb-2" 
+                                         placeholder="{{ field_label(singleTicketForm.phone1)}}*"
+                                         value="{{ field_value(singleTicketForm.phone1)}}"
+                                         name="{{ field_name(singleTicketForm.phone1)}}"
+                                         >
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-12 mb-2">
+                                        <select name="{{ field_name(singleTicketForm.dropdown) }}" class="form-select form-select-sm mb-2">
+                                            <option disabled="" selected="{{ field_label(singleTicketForm.dropdown) }}">{{ field_label(singleTicketForm.dropdown) }}*</option>
+                                        
+                                            {% for label, value in field_choices(singleTicketForm.dropdown) %}
+                                                <option value="{{ value }}">{{ label }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-6 col-sm-12 mb-2">
+                                        <input type="phone" class="form-control form-control-sm mb-2" 
+                                         placeholder="{{ field_label(singleTicketForm.city)}}*"
+                                         value="{{ field_value(singleTicketForm.city)}}"
+                                         name="{{ field_name(singleTicketForm.city)}}"
+                                         >
+                                    </div>
+
+                                    <div class="col-lg-4 col-sm-12 mb-2">
+                                        <input type="phone" class="form-control form-control-sm mb-2" 
+                                         placeholder="{{ field_label(singleTicketForm.text1)}}*"
+                                         value="{{ field_value(singleTicketForm.text1)}}"
+                                         name="{{ field_name(singleTicketForm.text1)}}"
+                                         >
+                                    </div>
+
+                                    <div class="col-lg-2 col-sm-12 mb-2">
+                                        <input type="phone" class="form-control form-control-sm mb-2" 
+                                         placeholder="{{ field_label(singleTicketForm.zip)}}*"
+                                         value="{{ field_value(singleTicketForm.zip)}}"
+                                         name="{{ field_name(singleTicketForm.zip)}}"
+                                         >
+                                    </div>
+
+
+                                </div>
+
+                                <div class="modal-footer bg-light border-0">
+                                    <button type="button" class="btn btn-gray-200 btn-sm" data-bs-dismiss="modal">Close</button>
+                                    <button type="{{ field_name(singleTicketForm.submit) }}" class="btn btn-secondary btn-sm">{{ field_label(singleTicketForm.submit) }}</button>
+                                </div>
+
+                        
+                        
+                                {{ form_end(singleTicketForm)}}
+ 
+                            {% endif %}
+                                
+                        {% endif %}
+                    </div> 
+                </div>
+            </div>
+    </div>
+</section>
+
+<section class="position-relative bg-white" id="sponzorstva">
+    <div class="container py-9 py-lg-11">
+        <h5 class="text-center text-dark mb-7">Pokrovitelji & Partneri Konferencije</h5>
+        <div class="row grid-separator-dark">
+            <!--Col-->
+            {% for partner in content.partners %}
+                {% if partner.excerptImages|length > 0 %}
+                
+                <div class="col-6 col-sm-4 col-lg-3 py-9 px-lg-5 d-flex align-items-center">
+                    <img src="{{ partner.excerptImages[0].thumbnails['150x.webp'] }}" class="img-fluid d-block mx-auto" alt="">
+                </div>
+                
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    {# <div class="container py-9 py-lg-11">
+        <h5 class="text-center text-dark mb-7">Pokrovitelji & Partneri Konferencije</h5>
+        <div class="row grid-separator-dark">
+            <!--Col-->
+            {% for partner in content.partners %}
+            {% if partner.excerptImages|length > 0 %}
+            <a href="{{ sulu_content_path(partner.url) }}">
+            <div class="col-6 col-sm-4 col-lg-3 py-9 px-lg-5 d-flex align-items-center">
+                <img src="{{ partner.excerptImages[0].thumbnails['200x.webp'] }}" class="img-fluid d-block mx-auto" alt="">
+            </div>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div> #}
+</section>
+
+<section class="position-relative bg-white text-dark" id="sponzorski-paketi">
+
+    <!--Pricing tables container-->
+    <div class="container position-relative pb-9 pb-lg-11">
+        <h3 class="text-center text-dark mb-7">Sponzorski Paketi</h5>
+        <!-- Plans--Switch -->
+        <div class="d-flex align-items-center justify-content-center mb-7 mb-lg-7">
+            <div class="price-monthly fs-5 position-relative">
+                <strong>Član ste Unije Poslodavaca?</strong>
+            </div>
+            <!-- Switch -->
+            <div class="form-check form-pricing-switch form-switch mx-3">
+                <input class="form-check-input me-0" type="checkbox" id="planSwitch" data-as-toggle="price"
+                    data-as-target=".price">
+                <label class="form-check-label" for="planSwitch"></label>
+            </div>
+            <div class="price-monthly fs-5">
+                <strong></strong>
+            </div>
+        </div>
+    
+        <!-- Plans--row -->
+        <div class="position-relative">
+            <div class="row g-md-2 justify-content-center position-relative z-index-1">
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card shadow card-body py-5 px-4 rounded-3 overflow-hidden h-100">
+                        <div class="position-relative overflow-hidden">
+                            <!--Title-->
+                            <h4>Platinum</h4>
+                            <!--Price-->
+                            <div class="d-flex align-items-end mb-4">
+                                <div class="price display-4 text-dark" data-as-annual="50000"
+                                    data-as-monthly="25000">50.000
+                                </div>
+                                <sup class="d-inline-block">rsd</sup>
+                            </div>
+
+                            <span class="badge bg-secondary text-white rounded-pill">Platinum sponzor:</span>
+                        </div>
+                        <!--Features list-->
+                        <ul class="text-start list-unstyled py-4 flex-grow-1">
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                    Predstavnik kompanije kao govornik ( tema vezana za konferenciju )
+                            </li>
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                    Štand na konferenciji
+                            </li>
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                    Prezentacija kompanije na web stranici u odeljku platinum sponzor
+                            </li>
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                 Top logotip pozicija / Platinasti sponzor na sajtu Konferencije
+                            </li>
+
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                Mogućnost za 2 roll up baner u sali tokom trajanja koferencije (kompanija donosi sama) 
+                            </li>
+
+                             <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                4 karte za konferenciju ( ne računajući osoblje ) 
+                            </li>
+
+                             <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                Centralna pozicija / najveći logotip na wall press
+                            </li>
+                        </ul>
+                        <!--Plan action-->
+                        <div class="d-grid">
+                            <a href="#!" class="btn btn-outline-secondary btn-hover-arrow rounded-pill hover-lift">
+                                <span>Postanite Platinum Sponzor</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.End-col-->
+                <div class="col-md-4 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="card shadow-lg z-index-1 card-body py-5 px-4 rounded-3 d-flex flex-column overflow-hidden h-100">
+                       
+                        <div class="position-relative overflow-hidden">
+                            <!--Title-->
+                            <h4>Zlatni</h4>
+                            <!--Price-->
+                            <div class="d-flex align-items-end mb-4">
+                                <div class="price display-4" data-as-annual="25000" data-as-monthly="12500">25.000
+                                </div>
+                                <sup class="d-inline-block">rsd</sup>
+                            </div>
+
+                            <span class="badge bg-warning text-secondary rounded-pill">Zlatni sponzor:</span>
+                        </div>
+                        <!--Features list-->
+                        <ul class="text-start list-unstyled py-4 flex-grow-1">
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                    Štand na konferenciji
+                            </li>
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                    Prezentacija kompanije na web stranici u odeljku zlatni sponzor
+                            </li>
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                 Top logotip pozicija - zlatni sponzor na sajtu Konferencije
+                            </li>
+
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                Mogućnost za 1 roll up baner u sali tokom trajanja koferencije (kompanija donosi sama) 
+                            </li>
+
+                             <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                2 karte za konferenciju ( ne računajući osoblje ) 
+                            </li>
+
+                             <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                Centralna pozicija / zlatni logotip na wall press
+                            </li>
+                        </ul>
+                        <!--Plan action-->
+                        <div class="d-grid">
+                            <a href="#!" class="btn btn-warning btn-hover-arrow rounded-pill hover-lift">
+                                <span>Postanite Zlatni Sponzor</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.End-col-->
+                <div class="col-md-4 mb-5 mb-md-0" data-aos="fade-up">
+                    <div
+                        class="card shadow card-body py-5 px-4 z-index-1 rounded-3 rounded-3 d-flex flex-column overflow-hidden h-100">
+                        <div class="position-relative overflow-hidden">
+                            <!--Title-->
+                            <h4>Srebrni</h4>
+                            <!--Price-->
+                            <div class="d-flex align-items-end mb-4">
+                                <div class="price display-4 text-dark" data-as-annual="15000"
+                                    data-as-monthly="7500">15.000
+                                </div>
+                                <sup class="d-inline-block">rsd</sup>
+                            </div>
+                             <span class="badge bg-secondary text-white rounded-pill">Srebrni sponzor:</span>
+                        </div>
+                        <!--Features list-->
+                        <ul class="text-start list-unstyled py-4 flex-grow-1">
+                            <li class="pb-2 mb-2 border-bottom d-table">
+                            <i class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                    Prezentacija kompanije na web stranici u odeljku srebrni sponzor
+                            </li>
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                    Top logotip pozicija / srebrni sponzor na sajtu Konferencije
+                            </li>
+                            <li class="pb-2 mb-2 border-bottom d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                    Mogućnost za 1 roll up baner u sali tokom trajanja koferencije (kompanija donosi sama)
+                            </li>
+                            <li class="pb-2 mb-2 d-table"><i
+                                    class="bx bx-check-circle fs-5 lh-1 me-2 text-success align-middle"></i>
+                                    1 karta za konferenciju
+                            </li>
+                        </ul>
+                        <!--Plan action-->
+                        <div class="d-grid">
+                            <a href="#!"
+                                class="btn btn-outline-secondary btn-hover-arrow rounded-pill hover-lift">
+                                <span>Postanite Srebrni sponzor</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--/.End-col-->
+            </div>
+            <!--/.End row-->
+        </div>
+    </div>
+    <!--/.End container-->
+
+
+</section>
+
+
+{% endblock %}

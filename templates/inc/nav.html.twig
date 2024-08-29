@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light navbar-link-white">
+    <!--Navbar-fixed-background-->
+    <div class="navbar-fixed-bg position-absolute"></div>
+    <div class="container position-relative">
+        <a class="navbar-brand" href="{{ sulu_content_root_path() }}">
+            <img src="{{asset('assets/img/logo/black-logo.png')}}" alt="" class="img-fluid navbar-brand-sticky">
+            <img src="{{asset('assets/img/logo/logo1.png')}}" alt="" class="img-fluid navbar-brand-transparent">
+        </a>
+        <div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+            <button class="navbar-toggler order-last" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNavbarTheme" aria-controls="mainNavbarTheme" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i></i>
+                </span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="mainNavbarTheme">
+            <ul class="navbar-nav ms-auto me-lg-5">
+                <li class="nav-item d-none">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item ms-lg-4">
+                    <a href="#konferencija" class="nav-link">O Konferenciji</a>
+                </li>
+                <li class="nav-item ms-lg-4">
+                    <a href="#agenda" class="nav-link">Agenda</a>
+                </li>
+                <li class="nav-item ms-lg-4">
+                    <a href="#predavaci" class="nav-link">Predavači</a>
+                </li>
+                <li class="nav-item ms-lg-4">
+                    <a href="#prijava" class="nav-link">Prijava</a>
+                </li>
+                <li class="nav-item ms-lg-4">
+                    <a href="#sponzorstva" class="nav-link">Pokrovitelji i Partneri</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
